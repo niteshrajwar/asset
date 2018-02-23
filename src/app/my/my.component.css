@@ -1,0 +1,43 @@
+#log{
+     margin-right: 50px;
+     margin-top: 30px;
+     margin-left: 20px;
+     
+     position: relative;
+}
+.ng-dirty.ng-valid[type="text"]{
+  border-bottom: 2px green solid;
+}
+.ng-dirty.ng-valid[type="password"]{
+  border-bottom: 2px green solid;
+}
+.ng-dirty.ng-invalid[type="text"]{
+  border-bottom: 2px red solid;
+}
+.ng-dirty.ng-invalid[type="password"]{
+  border-bottom: 2px red solid;
+}
+input[type="text"]{
+  width:300px;
+}
+
+input[type="password"]{
+  width:300px;
+}
+.alert{
+  background: pink;
+ 
+  margin-bottom: 20px;
+  display:inline-block;
+  animation: 2s alertAnim forwards;
+}
+@keyframes alertAnim{
+  from{
+    opacity: 0;
+    transform: translate(-20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

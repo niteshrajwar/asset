@@ -1,0 +1,36 @@
+
+<div class="container" id="log">
+<!--<h3>Log In</h3><br>-->
+	<form [formGroup]="loginform" >
+    <div class="form-group">
+  <b><label for="uname">Enter User name::<span style="color:red">*</span></label></b>
+  <input type="text" name="uname" class="form-control" #uname formControlName="uname"
+   placeholder="Enter your username" ngModel 
+     required>
+</div>
+
+<div class="alert" *ngIf="!loginform.controls['uname'].valid && loginform.controls['uname'].touched">
+ Name is required</div>
+<div class="form-group">
+  <b><label for="pwd">Enter Password::<span style="color:red">*</span></label></b>
+  <input type="password" class="form-control"  name="pwd"  #pwd formControlName="pwd"
+  placeholder="Enter your password" ngModel
+     required>
+</div>
+<div class="alert" *ngIf="!loginform.controls['pwd'].valid && loginform.controls['pwd'].touched">
+  Password is required</div>
+<div id="success"></div>
+ <div id="error" class="toggle"></div>
+  <div class="form-group">
+  <button class="btn btn-success" [disabled]="loginform.invalid" 
+   (click)="signing(uname.value,pwd.value)" >Log In</button>
+</div>
+<a href="">Forgotten Password?</a>
+	</form>
+<!--<div class="container" >
+  <ul *ngFor="let us of users">
+    <li>{{us.username}}</li>
+  </ul>
+</div>-->
+
+</div>
